@@ -100,7 +100,7 @@ def main():
     if args.cifar_type == 10:
         print('=> loading cifar10 data...')
         normalize = transforms.Normalize(mean=[0.491, 0.482, 0.447], std=[0.247, 0.243, 0.262])
-
+        shutil.copyfile("/data_public/~kriz/cifar-10-python.tar.gz", "cifar-10-python.tar.gz")
         train_dataset = torchvision.datasets.CIFAR10(
             root='./data', 
             train=True, 
@@ -126,7 +126,8 @@ def main():
     else:
         print('=> loading cifar100 data...')
         normalize = transforms.Normalize(mean=[0.507, 0.487, 0.441], std=[0.267, 0.256, 0.276])
-
+        shutil.copyfile("/data_public/~kriz/cifar-100-python.tar.gz", "cifar-100-python.tar.gz")
+        
         train_dataset = torchvision.datasets.CIFAR100(
             root='./data',
             train=True,
